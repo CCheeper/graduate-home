@@ -31,10 +31,17 @@
             <el-row style="float: right;margin-right: 50px;margin-top: 8px">
 
 
-                <el-button type="primary" @click="dialogVisible = true">登录</el-button>
-                <el-divider direction="vertical"></el-divider>
-                <el-button type="primary">注册</el-button>
+                <el-button v-if="this.$cookies.get('username')==''" type="primary" @click="dialogVisible = true">登录</el-button>
+                <el-divider v-if="this.$cookies.get('username')==''" direction="vertical"></el-divider>
+                <el-button v-if="this.$cookies.get('username')==''" type="primary">注册</el-button>
+
+
+                <el-link v-if="this.$cookies.get('username')!=''">{{this.$cookies.get('username')}}</el-link>
+                <el-divider v-if="this.$cookies.get('username')!=''" direction="vertical"></el-divider>
+                <el-link v-if="this.$cookies.get('username')!=''">退出登录</el-link>
+
             </el-row>
+
         </el-header>
         <div class="block">
 
@@ -100,6 +107,7 @@
                     {img: 'https://img-1252891025.cos.ap-chengdu.myqcloud.com/img4.jpg'}
                 ],
                 dialogVisible: false,
+                change:true,
                 login: {
                     username: "",
                     password: ""

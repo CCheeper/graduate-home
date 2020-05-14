@@ -8,10 +8,12 @@ import VueQuillEditor from 'vue-quill-editor'
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
+import VueCookies from 'vue-cookies'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(VueQuillEditor)
+Vue.use(VueCookies)
 
 new Vue({
   render: h => h(App),
