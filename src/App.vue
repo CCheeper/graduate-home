@@ -1,9 +1,9 @@
 <template>
 	<div id="app">
-		<el-button @click="change()">click</el-button>
+
 		
 		<component :is='name'></component>
-
+        <el-button @click="change()">click</el-button>
 	</div>
 </template>
 
